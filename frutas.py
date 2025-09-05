@@ -11,6 +11,7 @@ df
 from sklearn import tree
 
 arvore = tree.DecisionTreeClassifier(random_state=42)
+# creating the decision tree
 
 
 # %%
@@ -41,5 +42,10 @@ tree.plot_tree(arvore,
                class_names=arvore.classes_,
                filled=True)
 
+
+# %%
+
+proba = arvore.predict_proba([[1,1,1,1]])[0]
+pd.Series(proba, index=arvore.classes_)
 
 # %%
